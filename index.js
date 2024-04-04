@@ -41,3 +41,9 @@ app.get('/players/salary', async (req, res) => {
     'error': 'Cannot access this information'
   })
 })
+
+
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});

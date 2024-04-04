@@ -46,7 +46,7 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-app.get('/Galera vai a jogar fuchibol', async (req, res) => {
+app.get('/msg', async (req, res) => {
 
   try{
     res.status(200).send({"msg": "Galera vai a jogar fuchibol"})

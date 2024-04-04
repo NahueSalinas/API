@@ -45,3 +45,12 @@ app.get('/players/salary', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+app.get('/Galera vai a jogar fuchibol', async (req, res) => {
+
+  try{
+    res.status(200).send({"msg": "Galera vai a jogar fuchibol"})
+    } catch(0){
+      res.status(500).send({'error': 'Cara vc nao fala portugues'})
+    }
+})

@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path'); // Import path module
 
 const app = express();
-const port = 2712;
+const port = 3000;
 
 // Allow all cross-origin requests
 app.use(cors());
@@ -40,17 +40,4 @@ app.get('/players/salary', async (req, res) => {
   res.status(403).send({
     'error': 'Cannot access this information'
   })
-})
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-
-app.get('/msg', async (req, res) => {
-
-  try{
-    res.status(200).send({"msg": "Galera vai a jogar fuchibol"})
-    } catch(0){
-      res.status(500).send({'error': 'Cara vc nao fala portugues'})
-    }
 })

@@ -24,21 +24,21 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Business
 ****************************************/
 
-app.get('/players', async (req, res) => {
+app.get('/code', async (req, res) => {
   try{
     
     }catch(e){
-      res.status(500).send({'error': 'Internal server error'})
+      res.status(200).send({'Codigos de Programación Basicos': 'Se utilizan normalmente Html, Js(JavaScript), CSS, C#, C+, C++ y C'})
     }
 })
 
-app.get('/boom', async (req, res) => {
-  res.status(500).json({ message: "My bad" })
+app.get('/How', async (req, res) => {
+  res.status(200).json({ message: "Como aprendemos a programar?, bueno en caso que no puedas permitirte mirar video en YT, podes usar la normal herramienta IA ChatGpt que te puede ayudar en todos los lenguajes de programación o tambien la IA de programación BlackBox que esta solo especializada en los lenguajes de programación en incluso sabe mas que chat gpt en terminos de la programación." })
 })
 
-app.get('/players/salary', async (req, res) => {
+app.get('/Codigos', async (req, res) => {
   res.status(403).send({
-    'error': 'Cannot access this information'
+    'error': 'Perdón pero no te puedo dar acceso a los codigos de la pagina'
   })
 })
 

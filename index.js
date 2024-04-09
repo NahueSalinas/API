@@ -24,9 +24,14 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Business
 ****************************************/
 app.post('/data', (req, res) => {
+  try{
+}catch(e){
+  res.status(500).send({'error': 'Internal server error'})
+
   const datosRecibidos = req.body;
   datos = datosRecibidos;
-  res.json({ 'msg': 'Datos Recibidos Correctamente'});
+  res.json({ 'msg': 'Datos Recibidos Correctamente'});+
+}
 })
 
 app.put('/data/update', (req, res) => {

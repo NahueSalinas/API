@@ -2,6 +2,8 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path'); // Import path module
+const res = require('express/lib/response');
+const { error } = require('console');
 
 const app = express();
 const port = 3000;
@@ -20,25 +22,33 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // -------------------------------------------- ENDPOINTS --------------------------------------------
 
-/****************************************
- * Business
-****************************************/
-app.post('/data', (req, res) => {
-  try{
+/*
+  ENDPOINT GET
+*/
+app.get('/home', async (req,res) => {
+try{
+
+  res.status(200).send({'msg': 'welcome my son'})
 }catch(e){
-  res.status(500).send({'error': 'Internal server error'})
+  res.status(500).json({'error': 'There was a server error'})
 
-  const datosRecibidos = req.body;
-  datos = datosRecibidos;
-  res.json({ 'msg': 'Datos Recibidos Correctamente'});+
-}
+}})
+
+/*
+  ENDPOINT POST
+*/
+
+
+app.post('/Hub', async (req, res) => {
+  try{
+    res.status(200).send({
+      "Bienvenido al Centro de la Red": req.body
+    })
+  }catch(e){
+    res.status(500).send({'error': 'Internal server error'})
+  }
 })
 
-app.put('/data/update', (req, res) => {
-  const datosActualizados = req.body;
-  datos = datosActualizados;
-  res.json({ 'msg': 'Datos Actualizados Correctamente'})
-})
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

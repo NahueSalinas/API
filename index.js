@@ -34,6 +34,10 @@ try{
 
 }})
 
+app.get('/CodeAcademy', async (req,res) => {
+ res.status(200).sendFile(path.join(__dirname, 'public', 'tutu', 'index.html'));
+})
+
 /*
   ENDPOINT POST
 */

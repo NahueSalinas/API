@@ -38,6 +38,19 @@ app.get('/CodeAcademy', async (req,res) => {
  res.status(200).sendFile(path.join(__dirname, 'public', 'tutu', 'index.html'));
 })
 
+app.get('/CodeExamples', async (req,res) => {
+  res.status(200).sendFile(path.join(__dirname, 'public', 'tutu', 'index.html'));
+ })
+
+app.get('/Programmingcourses', async (req,res) => {
+  res.status(200).sendFile(path.join(__dirname, 'public', 'tutu', 'index.html'))
+
+})
+
+app.get('/Team', async (req,res) => {
+  res.status(200).sendFile(path.join(__dirname, 'public', 'tutu', 'index.html'))
+
+})
 /*
   ENDPOINT POST
 */
